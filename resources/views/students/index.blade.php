@@ -30,16 +30,16 @@
                     @endphp
                     
                     @foreach($students as $student)
-                    <tr>
-                        <td>{{ $student['id'] }}</td>
-                        <td>{{ $student['name'] }}</td>
-                        <td>{{ $student['course'] }}</td>
-                        <td>{{ $student['year_level'] }}</td>
-                        <td>
-                            <a href="{{ route('students.show', $student['id']) }}" class="btn btn-sm btn-info">View</a>
-                            <a href="{{ route('students.edit', $student['id']) }}" class="btn btn-sm btn-warning">Edit</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{{ $student['id'] }}</td>
+                            <td>{{ $student['name'] }}</td>
+                            <td>{{ $student['course'] }}</td>
+                            <td>{{ $student['year_level'] }}</td>
+                            <td>
+                                <x-action-button type="view" href="{{ route('students.show', $student['id']) }}" />
+                                <x-action-button type="edit" href="{{ route('students.edit', $student['id']) }}" />
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
